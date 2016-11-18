@@ -1,0 +1,19 @@
+.main {
+max-width: 1024px;
+margin: auto;
+}
+.escolhido {
+width: 50%;
+margin: auto;
+text-align: center;
+}
+h2 {
+text-align: center;
+}
+.lista {
+width: 100%;
+}
+table {
+width: 100%;
+text-align: center;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="app.js"></script>
+    <meta charset="UTF-8">
+    <style type="text/css" href="style.css"></style>
+  </head>
+  <body ng-app="swapi">
+    <div ng-controller="StardexController as starCtrl" class="main">
+      <h1>Stardex</h1>
+      <div class="escolhido">
+        <fieldset>
+          <p>Nome: {{starCtrl.nome}}</p>
+          <p>Altura: {{starCtrl.altura}}</p>
+          <p>Peso: {{starCtrl.peso}}</p>
+          <p>Sexo: {{starCtrl.sexo}}</p>
+          <p>Ano de Nascimento: {{starCtrl.dataDeNascimento}}</p>
+        </fieldset>
+      </div>
+      <div class="lista">
+        <br>
+        <h2>Personagens de Star Wars</h2>
+        <hr>
+        Filtre pelo nome: <input type="text" ng-model="search"><br>
+        <hr>
+
+        <table border="1">
+          <tr ng-repeat="personagem in starCtrl.personagens | filter: search">
+            <td>{{personagem.name}}</td>
+            <td><button ng-click='starCtrl.pegaDescricao(personagem.url)'>Obter Informações</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
