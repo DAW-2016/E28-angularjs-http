@@ -11,8 +11,12 @@
 
       <table>
         <tr><td><b>Pokemon</b></td></tr>
+        <p>Nome: {{pokeCtrl.nome}}</p>
+        <p>Ataque: {{pokeCtrl.attack}}</p>
+        <p>Defesa: {{pokeCtrl.defense}}</p>
         <tr ng-repeat="pokemon in pokeCtrl.pokemons">
           <td>{{pokemon.name}}</td>
+          <td><button ng-click='pokeCtrl.pegaDescricao(pokemon.resource_uri)'>Obter Informações</button></td>
         </tr>
       </table>
     </div>
